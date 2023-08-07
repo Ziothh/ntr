@@ -1,0 +1,18 @@
+{
+  "name": "TRoute",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "crate": "cd crate && cargo ",
+    "start": "pnpm crate run",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.1.6"
+
+  }
+}
