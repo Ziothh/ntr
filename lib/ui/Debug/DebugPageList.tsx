@@ -87,7 +87,7 @@ const PageList: FC<{ index: number, routes: NextRoute[] }> = ({ index, routes })
                   )
               }</h3>
               <p className="block ml-auto w-fit">
-                {route.purpose}
+                [{route.router.type}] ({route.purpose})
               </p>
 
             </button>
