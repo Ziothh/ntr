@@ -2,6 +2,7 @@
 name = "bin"
 version = "0.1.0"
 edition = "2021"
+build = "build.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -11,3 +12,9 @@ dirs = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
 specta = { workspace = true }
+
+[build-dependencies]
+specta = { workspace = true }
+serde = { workspace = true }
+anyhow = { workspace = true }
+dirs = { workspace = true }
