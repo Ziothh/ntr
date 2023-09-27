@@ -16,147 +16,6 @@
     "parentIndex": null
   },
   {
-    "urlPath": "/products/[[...catchAll]]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/products/[[...catchAll]]/page.tsx",
-    "relativePath": "./products/[[...catchAll]]/page",
-    "router": {
-      "type": "app",
-      "loading": false,
-      "error": false,
-      "layout": false,
-      "template": false,
-      "notFound": false
-    },
-    "params": [
-      {
-        "type": "catchAll",
-        "key": "catchAll"
-      }
-    ],
-    "purpose": "page",
-    "parentIndex": 0
-  },
-  {
-    "urlPath": "/products/[[...catchAll]]/[variant]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/products/[[...catchAll]]/[variant]/page.tsx",
-    "relativePath": "./products/[[...catchAll]]/[variant]/page",
-    "router": {
-      "type": "app",
-      "loading": false,
-      "error": false,
-      "layout": false,
-      "template": false,
-      "notFound": false
-    },
-    "params": [
-      {
-        "type": "catchAll",
-        "key": "catchAll"
-      },
-      {
-        "type": "single",
-        "key": "variant"
-      }
-    ],
-    "purpose": "page",
-    "parentIndex": 1
-  },
-  {
-    "urlPath": "/products/[[...catchAll]]/[variant]/[id]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/products/[[...catchAll]]/[variant]/[id]/page.tsx",
-    "relativePath": "./products/[[...catchAll]]/[variant]/[id]/page",
-    "router": {
-      "type": "app",
-      "loading": false,
-      "error": false,
-      "layout": false,
-      "template": false,
-      "notFound": false
-    },
-    "params": [
-      {
-        "type": "catchAll",
-        "key": "catchAll"
-      },
-      {
-        "type": "single",
-        "key": "variant"
-      },
-      {
-        "type": "single",
-        "key": "id"
-      }
-    ],
-    "purpose": "page",
-    "parentIndex": 2
-  },
-  {
-    "urlPath": "/products/[[...catchAll]]/[variant]/[id]/[variant]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/products/[[...catchAll]]/[variant]/[id]/[variant]/page.tsx",
-    "relativePath": "./products/[[...catchAll]]/[variant]/[id]/[variant]/page",
-    "router": {
-      "type": "app",
-      "loading": false,
-      "error": false,
-      "layout": false,
-      "template": false,
-      "notFound": false
-    },
-    "params": [
-      {
-        "type": "catchAll",
-        "key": "catchAll"
-      },
-      {
-        "type": "single",
-        "key": "variant"
-      },
-      {
-        "type": "single",
-        "key": "id"
-      },
-      {
-        "type": "single",
-        "key": "variant"
-      }
-    ],
-    "purpose": "page",
-    "parentIndex": 3
-  },
-  {
-    "urlPath": "/products/[[...catchAll]]/[variant]/[id]/[[...catchAll]]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/products/[[...catchAll]]/[variant]/[id]/[[...catchAll]]/page.tsx",
-    "relativePath": "./products/[[...catchAll]]/[variant]/[id]/[[...catchAll]]/page",
-    "router": {
-      "type": "app",
-      "loading": false,
-      "error": false,
-      "layout": false,
-      "template": false,
-      "notFound": false
-    },
-    "params": [
-      {
-        "type": "catchAll",
-        "key": "catchAll"
-      },
-      {
-        "type": "single",
-        "key": "variant"
-      },
-      {
-        "type": "single",
-        "key": "id"
-      },
-      {
-        "type": "catchAll",
-        "key": "catchAll"
-      }
-    ],
-    "purpose": "page",
-    "parentIndex": 3
-  },
-  {
     "urlPath": "/products/[id]",
     "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/products/[id]/page.tsx",
     "relativePath": "./products/[id]/page",
@@ -200,12 +59,12 @@
       }
     ],
     "purpose": "page",
-    "parentIndex": 6
+    "parentIndex": 1
   },
   {
-    "urlPath": "/products/[id]/[[...catchAll]]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/products/[id]/[[...catchAll]]/page.tsx",
-    "relativePath": "./products/[id]/[[...catchAll]]/page",
+    "urlPath": "/user",
+    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/user/page.tsx",
+    "relativePath": "./user/page",
     "router": {
       "type": "app",
       "loading": false,
@@ -214,23 +73,14 @@
       "template": false,
       "notFound": false
     },
-    "params": [
-      {
-        "type": "single",
-        "key": "id"
-      },
-      {
-        "type": "catchAll",
-        "key": "catchAll"
-      }
-    ],
+    "params": null,
     "purpose": "page",
-    "parentIndex": 6
+    "parentIndex": null
   },
   {
-    "urlPath": "/products/[userId]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/products/[userId]/page.tsx",
-    "relativePath": "./products/[userId]/page",
+    "urlPath": "/user/[userId]",
+    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/user/[userId]/page.tsx",
+    "relativePath": "./user/[userId]/page",
     "router": {
       "type": "app",
       "loading": false,
@@ -246,12 +96,12 @@
       }
     ],
     "purpose": "page",
-    "parentIndex": 0
+    "parentIndex": 3
   },
   {
-    "urlPath": "/products/[userId]/[orderId]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/products/[userId]/[orderId]/page.tsx",
-    "relativePath": "./products/[userId]/[orderId]/page",
+    "urlPath": "/user/[userId]/[orderId]",
+    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/user/[userId]/[orderId]/page.tsx",
+    "relativePath": "./user/[userId]/[orderId]/page",
     "router": {
       "type": "app",
       "loading": false,
@@ -271,43 +121,6 @@
       }
     ],
     "purpose": "page",
-    "parentIndex": 9
-  },
-  {
-    "urlPath": "/user",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/user/page.tsx",
-    "relativePath": "./user/page",
-    "router": {
-      "type": "app",
-      "loading": false,
-      "error": false,
-      "layout": false,
-      "template": false,
-      "notFound": false
-    },
-    "params": null,
-    "purpose": "page",
-    "parentIndex": null
-  },
-  {
-    "urlPath": "/user/[id]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/user/[id]/page.tsx",
-    "relativePath": "./user/[id]/page",
-    "router": {
-      "type": "app",
-      "loading": false,
-      "error": false,
-      "layout": false,
-      "template": false,
-      "notFound": false
-    },
-    "params": [
-      {
-        "type": "single",
-        "key": "id"
-      }
-    ],
-    "purpose": "page",
-    "parentIndex": 11
+    "parentIndex": 4
   }
 ]
