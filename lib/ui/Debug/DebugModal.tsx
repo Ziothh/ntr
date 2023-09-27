@@ -4,7 +4,7 @@ import { Dialog, Transition } from "@headlessui/react"
 import { CodeBracketSquareIcon, XMarkIcon } from "@heroicons/react/24/outline"
 import clsx from "clsx"
 import { Fragment, PropsWithChildren, useState } from "react"
-import { useDebugCtx } from "./DebugContext"
+import { useDebugCtx } from "."
 
 
 
