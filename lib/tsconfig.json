@@ -23,7 +23,8 @@
   },
   "include": [
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "../playground/generated/routes.ts"
   ],
   "exclude": [
     "node_modules"

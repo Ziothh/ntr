@@ -11,34 +11,41 @@ pub struct ProjectPath {
 impl ProjectPath {
     /// Relative path string that starts from the root
     pub fn relative(&self) -> String {
+        // TODO: this doesn't work atm
+        
         let str = self.absolute.to_str().unwrap();
 
-        return str[0..(str.len()
+        let path = str[0..(str.len()
             - match self.absolute.extension() {
                 Some(ext) => 1 + ext.len(),
                 None => 0,
             })]
             .replace(self.root.to_str().unwrap(), ".");
+
+        return if path == "." { "./".to_owned() } else { path };
     }
 
     pub fn url(&self) -> String {
         let str = self.absolute.to_str().unwrap();
 
         #[rustfmt::skip]
-        return str[
-            self.root.to_str().unwrap().len()
-            ..
-            (str.len() - if self.absolute.is_dir() { 0 } else { 
-                match self.absolute.extension() {
-                    Some(ext) => 1 + ext.len(),
-                    None => 0,
-                }
-            })
-        ]
-        .split('/')
-        .filter(|segment| !segment.starts_with('('))
-        .collect::<Vec<_>>()
-        .join("/");
+        let url = str[
+                self.root.to_str().unwrap().len()
+                ..
+                (str.len() - if self.absolute.is_dir() { 0 } else { 
+                    match self.absolute.extension() {
+                        Some(ext) => 1 + ext.len(),
+                        None => 0,
+                    }
+                })
+            ]
+            .split('/')
+            .filter(|segment| !segment.starts_with('('))
+            .collect::<Vec<_>>()
+            .join("/");
+
+
+        return if url == "" { "/".to_owned() } else { url };
     }
 
     pub fn from_root(root: PathBuf) -> Self {

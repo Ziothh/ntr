@@ -6,8 +6,8 @@
   "types": "index.ts",
   "type": "module",
   "files": [
-    "./**/*.tsx",
-    "./**/*.ts"
+    "./index.ts",
+    "./dev/index.ts"
   ],
   "scripts": {
     "shadcn": "pnpm dlx shadcn-ui@latest"
@@ -37,7 +37,7 @@
     "next": "~13.4.13",
     "react": "~18.2.0",
     "react-dom": "~18.2.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   },
   "peerDependencies": {
     "next": "~13.4.13"
