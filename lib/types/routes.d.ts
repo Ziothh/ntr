@@ -28,7 +28,9 @@ export namespace Routes {
   export type getParams<R extends NextRoute> = R['params'] extends null
     ? {}
     : {
-      [K in keyof R['params']as K extends number ? R['params'][K]['key'] : never]: R['params'][K]['type'] extends 'single'
+      [
+      K in keyof R['params']as K extends number ? R['params'][K]['key'] : never
+      ]: R['params'][K]['type'] extends 'single'
       ? string
       : string[]
     }

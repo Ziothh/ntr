@@ -41,7 +41,7 @@ pub fn parse_dir(project_path: ProjectPath, routes: &mut Vec<NextRoute>) -> anyh
     }
 
     if let Some(route_purpose) = route_purpose {
-        let mut route_path = project_path.join(
+        let route_path = project_path.join(
             match route_purpose {
                 RoutePurpose::Page => "page",
                 RoutePurpose::API => "route",

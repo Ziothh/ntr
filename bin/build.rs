@@ -15,7 +15,7 @@ pub fn main() -> anyhow::Result<()> {
     #[rustfmt::skip]
     let mut file = File::create(
         Path::new(&std::env::var("OUT_DIR").unwrap())
-            .join("../../../../../lib/generated/types.d.ts"),
+            .join("../../../../../lib/generated/rustTypes.d.ts"),
     )?;
 
     let contents = [
