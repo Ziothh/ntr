@@ -1,5 +1,4 @@
-import type { Route as NextRoute } from 'next'
-import { Routes } from '../types'
+import type { Routes } from '../types'
 
 /*
   Utility namespaces
@@ -18,14 +17,14 @@ export namespace Route {
   /** Parses the parameters from the given URL path string */
   export type getParams<T extends Path.Type> =
     T extends `${infer A}/[${infer Param}]${infer B}`
-      ?
-          | (Param extends `...${string}`
-              ? // If it's a catch-all it's allowed to be any string
-                string & {}
-              : Param)
-          // Recursively parse the path
-          | getParams<Path.fromString<`${A}${B}`>>
-      : never
+    ?
+    | (Param extends `...${string}`
+      ? // If it's a catch-all it's allowed to be any string
+      string & {}
+      : Param)
+    // Recursively parse the path
+    | getParams<Path.fromString<`${A}${B}`>>
+    : never
 
   export type Data<Path extends Path.Type> = {
     query?: Record<string, string>
@@ -78,22 +77,19 @@ export function createUrl<Path extends Routes.Paths.All>(
   path: Path,
   data: Route.Data<Path>
 ) {
-  let url: string = path
+  let url: string = path;
 
-  if ('params' in data)
-    Object.entries<string>(data.params).forEach(
-      ([key, value]) => (url = url.replaceAll(`[${key}]`, value))
-    )
+  if ('params' in data) Object
+    .entries<string>(data.params)
+    .forEach(([key, value]) => (url = url.replaceAll(`[${key}]`, value)));
 
-  const queryEntries =
-    data.query === undefined ? null : Object.entries(data.query)
-  if (queryEntries !== null)
-    queryEntries.forEach(
-      ([key, value], index) =>
-        (url += `${index === 0 ? '?' : '&'}${key}=${encodeURI(value)}`)
-    )
+  if (data.query !== undefined) Object
+    .entries(data.query)
+    .forEach(
+      ([key, value], index) => (url += `${index === 0 ? '?' : '&'}${key}=${encodeURI(value)}`)
+    );
 
-  if (data.hash !== undefined) url += `#${data.hash}`
+  if (data.hash !== undefined) url += `#${data.hash}`;
 
-  return url as NextRoute<any>
+  return url;
 }
