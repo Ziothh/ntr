@@ -1,1 +1,4 @@
-import type { APP_ROUTES } from '@acme/lib';
+import { appRouter, Routes } from '@acme/lib';
+
+
+appRouter.useRouter().push('/products/[id]/[variant]', {})

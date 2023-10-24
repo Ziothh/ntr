@@ -2,31 +2,26 @@ import type { Routes } from "../../types/routes";
 import appRouter from 'next/navigation'
 import { Route, createUrl } from "../utils";
 
+/** Higher order function to create routing wrapper functions in `useRouter`. */
+const createRoutingFn = <Fn extends (url: string, options?: Record<any, any>) => void>(routingFn: Fn) => {
+  return function<Path extends Routes.Paths.AppDir>(
+    path: Path,
+    ...args: Path extends `${string}/[${string}]${string}`
+    ? [options: Route.Data<Path> & Parameters<Fn>[1]]
+    : [options?: Route.Data<Path> & Parameters<Fn>[1]]
+  ) {
+    return routingFn(createUrl(path, args[0] ?? {} as any), args[0])
+  }
+}
+
 export function useRouter() {
   const { push, replace, prefetch, ...router } = appRouter.useRouter()
 
   return {
     ...router,
-    push<Path extends Routes.Paths.AppDir>(
-      hrefTemplate: Path,
-      options: Route.Data<Path> & Parameters<typeof push>[1]
-    ) {
-      return push(createUrl(hrefTemplate, options), options);
-    },
-
-    replace<Path extends Routes.Paths.AppDir>(
-      hrefTemplate: Path,
-      options: Route.Data<Path> & Parameters<typeof replace>[1]
-    ) {
-      return replace(createUrl(hrefTemplate, options), options);
-    },
-
-    prefetch<Path extends Routes.Paths.AppDir>(
-      hrefTemplate: Path,
-      options: Route.Data<Path>
-    ) {
-      return prefetch(createUrl(hrefTemplate, options));
-    },
+    push: createRoutingFn(push),
+    replace: createRoutingFn(push),
+    prefetch: createRoutingFn(push),
   } as const;
 }
 

@@ -68,7 +68,7 @@ fn write_node_modules_types(pages_dir_str: &str, app_dir_str: &str) -> anyhow::R
     )
     .unwrap();
 
-    println!("Wrote types.");
+    println!("> Wrote types.");
 
     return anyhow::Ok(());
 }
@@ -82,7 +82,7 @@ fn write_ts(out_dir: &Path, pages_dir_str: &str, app_dir_str: &str) -> anyhow::R
 
     std::fs::write(out_dir.join("routes.ts"), contents).unwrap();
 
-    println!("Wrote ts generated output to {out_dir:?}");
+    println!("> Wrote ts generated output to {out_dir:?}");
 
     return anyhow::Ok(());
 }

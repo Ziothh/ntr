@@ -4,9 +4,9 @@ import { NextRoute } from '../generated/types';
 /** Namespace containing generated Next.js routes */
 export namespace Routes {
   /** `/app` dir routes */
-  export type AppDir = typeof APP_ROUTES[number];
+  export type AppDir = APP_ROUTES[number];
   /** `/pages` dir routes */
-  export type PagesDir = typeof PAGES_ROUTES[number];
+  export type PagesDir = PAGES_ROUTES[number];
 
   /** `/app` & `/pages` dir routes combined */
   export type All = AppDir | PagesDir;
