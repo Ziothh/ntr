@@ -49,16 +49,16 @@ fn bin() -> Result<(), String> {
         Err(_) => "[]".to_owned(),
     };
 
-    write_node_modules_types(&pages_dir_str, &app_dir_str).unwrap();
+    write_node_modules_types(&project_path, &pages_dir_str, &app_dir_str).unwrap();
     write_ts(&out_dir, &pages_dir_str, &app_dir_str).unwrap();
 
     return Ok(());
 }
 
 /// Write the parsed routes to a TypeScript file.
-fn write_node_modules_types(pages_dir_str: &str, app_dir_str: &str) -> anyhow::Result<()> {
+fn write_node_modules_types(project_path: &Path, pages_dir_str: &str, app_dir_str: &str) -> anyhow::Result<()> {
     std::fs::write(
-        Path::new("/home/zioth/projects/libs/nra/lib/generated/routes.d.ts"),
+        project_path.join("node_modules/@acme/lib/generated/routes.d.ts"),
         [
             "/* NOTE: THIS FILE HAS BEEN AUTOMATICALLY GENERATED. DO NOT EDIT. */\n",
             &format!("\nexport type PAGES_ROUTES = {};", pages_dir_str),
