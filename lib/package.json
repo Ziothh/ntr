@@ -6,30 +6,14 @@
   "types": "index.ts",
   "type": "module",
   "files": [
-    "./index.ts",
-    "./dev/index.ts"
+    "./index.ts"
   ],
   "scripts": {
-    "shadcn": "pnpm dlx shadcn-ui@latest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@headlessui/react": "^1.7.17",
-    "@heroicons/react": "^2.0.18",
-    "@radix-ui/react-dialog": "^1.0.5",
-    "@radix-ui/react-label": "^2.0.2",
-    "@radix-ui/react-slot": "^1.0.2",
-    "@radix-ui/react-switch": "^1.0.3",
-    "@radix-ui/react-tooltip": "^1.0.7",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.0.0",
-    "cmdk": "^0.2.0",
-    "lucide-react": "^0.279.0",
-    "superjson": "^1.13.1",
-    "tailwind-merge": "^1.14.0",
-    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/react": "^18.2.20",
