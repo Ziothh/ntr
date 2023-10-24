@@ -1,4 +1,5 @@
-import type { PoC_Routes, Route as NextRoute } from 'next'
+import type { Route as NextRoute } from 'next'
+import { Routes } from '../types'
 
 /*
   Utility namespaces
@@ -73,7 +74,7 @@ export namespace Route {
  * }) // '/todos/15?hello=world#section-1'
  * ```
  */
-export function createUrl<Path extends PoC_Routes.AllRoutes>(
+export function createUrl<Path extends Routes.Paths.All>(
   path: Path,
   data: Route.Data<Path>
 ) {
