@@ -6,6 +6,7 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
+    "gen:routes": "../target/debug/bin",
     "start": "next start"
   },
   "dependencies": {
