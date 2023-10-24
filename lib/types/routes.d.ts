@@ -1,4 +1,4 @@
-import type { PAGES_ROUTES, APP_ROUTES } from '../../playground/generated/routes';
+import type { PAGES_ROUTES, APP_ROUTES } from '../generated/routes';
 import { NextRoute } from '../generated/types';
 
 /** Namespace containing generated Next.js routes */

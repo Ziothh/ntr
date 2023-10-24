@@ -1,4 +1,3 @@
 export * from './next';
 
-export * as dev from './dev';
-
+export type { PAGES_ROUTES, APP_ROUTES, AllRoutes} from '@acme/lib';

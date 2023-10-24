@@ -5,7 +5,7 @@ export const PAGES_ROUTES = [
   {
     "urlPath": "/",
     "absolutePath": "/home/zioth/projects/libs/nra/playground/src/pages",
-    "relativePath": "../",
+    "relativePath": "./",
     "router": {
       "type": "pages"
     },
@@ -16,7 +16,7 @@ export const PAGES_ROUTES = [
   {
     "urlPath": "/api/trpc/[trpc]",
     "absolutePath": "/home/zioth/projects/libs/nra/playground/src/pages/api/trpc/[trpc].ts",
-    "relativePath": "../api/trpc/[trpc]",
+    "relativePath": "./api/trpc/[trpc]",
     "router": {
       "type": "pages"
     },
@@ -32,7 +32,7 @@ export const PAGES_ROUTES = [
   {
     "urlPath": "/api/auth/[...nextauth]",
     "absolutePath": "/home/zioth/projects/libs/nra/playground/src/pages/api/auth/[...nextauth].ts",
-    "relativePath": "../api/auth/[...nextauth]",
+    "relativePath": "./api/auth/[...nextauth]",
     "router": {
       "type": "pages"
     },
@@ -48,7 +48,7 @@ export const PAGES_ROUTES = [
   {
     "urlPath": "/orders",
     "absolutePath": "/home/zioth/projects/libs/nra/playground/src/pages/orders",
-    "relativePath": "../orders",
+    "relativePath": "./orders",
     "router": {
       "type": "pages"
     },
@@ -59,7 +59,7 @@ export const PAGES_ROUTES = [
   {
     "urlPath": "/orders/page",
     "absolutePath": "/home/zioth/projects/libs/nra/playground/src/pages/orders/page.tsx",
-    "relativePath": "../orders/page",
+    "relativePath": "./orders/page",
     "router": {
       "type": "pages"
     },
@@ -70,7 +70,7 @@ export const PAGES_ROUTES = [
   {
     "urlPath": "/orders/[userId]",
     "absolutePath": "/home/zioth/projects/libs/nra/playground/src/pages/orders/[userId]",
-    "relativePath": "../orders/[userId]",
+    "relativePath": "./orders/[userId]",
     "router": {
       "type": "pages"
     },
@@ -86,7 +86,7 @@ export const PAGES_ROUTES = [
   {
     "urlPath": "/orders/[userId]/[orderId]",
     "absolutePath": "/home/zioth/projects/libs/nra/playground/src/pages/orders/[userId]/[orderId]",
-    "relativePath": "../orders/[userId]/[orderId]",
+    "relativePath": "./orders/[userId]/[orderId]",
     "router": {
       "type": "pages"
     },
@@ -108,7 +108,7 @@ export const APP_ROUTES = [
   {
     "urlPath": "/products",
     "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/products/page.tsx",
-    "relativePath": "../products/page",
+    "relativePath": "./products/page",
     "router": {
       "type": "app",
       "loading": false,
@@ -124,7 +124,7 @@ export const APP_ROUTES = [
   {
     "urlPath": "/products/[id]",
     "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/products/[id]/page.tsx",
-    "relativePath": "../products/[id]/page",
+    "relativePath": "./products/[id]/page",
     "router": {
       "type": "app",
       "loading": false,
@@ -145,7 +145,7 @@ export const APP_ROUTES = [
   {
     "urlPath": "/products/[id]/[variant]",
     "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/products/[id]/[variant]/page.tsx",
-    "relativePath": "../products/[id]/[variant]/page",
+    "relativePath": "./products/[id]/[variant]/page",
     "router": {
       "type": "app",
       "loading": false,
@@ -170,7 +170,7 @@ export const APP_ROUTES = [
   {
     "urlPath": "/user",
     "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/user/page.tsx",
-    "relativePath": "../user/page",
+    "relativePath": "./user/page",
     "router": {
       "type": "app",
       "loading": false,
@@ -186,7 +186,7 @@ export const APP_ROUTES = [
   {
     "urlPath": "/user/[userId]",
     "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/user/[userId]/page.tsx",
-    "relativePath": "../user/[userId]/page",
+    "relativePath": "./user/[userId]/page",
     "router": {
       "type": "app",
       "loading": false,
@@ -207,7 +207,7 @@ export const APP_ROUTES = [
   {
     "urlPath": "/user/[userId]/[orderId]",
     "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/user/[userId]/[orderId]/page.tsx",
-    "relativePath": "../user/[userId]/[orderId]/page",
+    "relativePath": "./user/[userId]/[orderId]/page",
     "router": {
       "type": "app",
       "loading": false,
