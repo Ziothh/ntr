@@ -8,7 +8,8 @@ mod cli;
 mod next;
 mod utils;
 
-const OUT_DIR: &str = "/home/zioth/projects/libs/nra/playground/generated";
+/// The name in `package.json` in `../lib`.
+const NODE_LIBRARY_NAME: &str = "@acme/lib";
 
 fn bin() -> Result<(), String> {
     let cli = CLI::parse();
@@ -23,7 +24,7 @@ fn bin() -> Result<(), String> {
 
     let src = next::project::find_project_source(&project_path.to_owned()).unwrap();
 
-    let out_dir = Path::new(&OUT_DIR).canonicalize().unwrap();
+    let out_dir = project_path.join("generated");
     std::fs::create_dir_all(&out_dir).unwrap();
 
     // Handle pages dir
@@ -56,13 +57,20 @@ fn bin() -> Result<(), String> {
 }
 
 /// Write the parsed routes to a TypeScript file.
-fn write_node_modules_types(project_path: &Path, pages_dir_str: &str, app_dir_str: &str) -> anyhow::Result<()> {
+fn write_node_modules_types(
+    project_path: &Path,
+    pages_dir_str: &str,
+    app_dir_str: &str,
+) -> anyhow::Result<()> {
     std::fs::write(
-        project_path.join("node_modules/@acme/lib/generated/routes.d.ts"),
+        project_path.join(format!(
+            "node_modules/{}/generated/routes.d.ts",
+            NODE_LIBRARY_NAME
+        )),
         [
             "/* NOTE: THIS FILE HAS BEEN AUTOMATICALLY GENERATED. DO NOT EDIT. */\n",
             &format!("\nexport type PAGES_ROUTES = {};", pages_dir_str),
-            &format!("\nexport type APP_ROUTES = {};", app_dir_str,),
+            &format!("\nexport type APP_ROUTES = {};", app_dir_str),
         ]
         .join("\n"),
     )
