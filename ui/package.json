@@ -1,5 +1,6 @@
 {
-  "name": "@acme/ui",
+  "name": "@next-typed-routes/ui",
+  "private": true,
   "version": "0.0.0",
   "description": "",
   "main": "index.ts",
