@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "changeset": "changeset",
     "crate": "cd crate && cargo ",
     "start": "pnpm crate run",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +13,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "packageManager": "pnpm",
   "devDependencies": {
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.26.2"
   }
 }

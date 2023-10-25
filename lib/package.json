@@ -1,6 +1,7 @@
 {
   "name": "@next-typed-routes/lib",
   "version": "0.0.0",
+  "private": false,
   "description": "",
   "main": "index.ts",
   "types": "index.ts",
