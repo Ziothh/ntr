@@ -26,5 +26,7 @@
   },
   "peerDependencies": {
     "next": "^13.4.13"
+  },
+  "optionalDependencies": {
   }
 }

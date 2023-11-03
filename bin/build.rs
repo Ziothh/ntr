@@ -12,11 +12,12 @@ pub fn main() -> anyhow::Result<()> {
     let config = specta::ts::ExportConfiguration::new()
         .bigint(specta::ts::BigIntExportBehavior::Number);
 
-    #[rustfmt::skip]
-    let mut file = File::create(
-        Path::new(&std::env::var("OUT_DIR").unwrap())
-            .join("../../../../../lib/generated/rustTypes.d.ts"),
-    )?;
+    // The directory of the binary crate
+    let crate_dir = std::env::var("CARGO_MANIFEST_DIR")?;
+
+    let out = Path::new(&crate_dir).join("../lib/generated/rustTypes.d.ts");
+
+    let mut file = File::create(Path::new(&out))?;
 
     let contents = [
         "/* THIS FILE HAS BEEN AUTOMATICALLY GENERATED AND CONTAINS TYPES THAT CORESPOND WITH THE RUST BINARY */\n".to_owned(),
