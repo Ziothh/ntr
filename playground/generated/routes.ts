@@ -4,7 +4,7 @@
 export const PAGES_ROUTES = [
   {
     "urlPath": "/",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/pages",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages",
     "relativePath": "./",
     "router": {
       "type": "pages"
@@ -15,7 +15,7 @@ export const PAGES_ROUTES = [
   },
   {
     "urlPath": "/api/trpc/[trpc]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/pages/api/trpc/[trpc].ts",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages/api/trpc/[trpc].ts",
     "relativePath": "./api/trpc/[trpc]",
     "router": {
       "type": "pages"
@@ -31,7 +31,7 @@ export const PAGES_ROUTES = [
   },
   {
     "urlPath": "/api/auth/[...nextauth]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/pages/api/auth/[...nextauth].ts",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages/api/auth/[...nextauth].ts",
     "relativePath": "./api/auth/[...nextauth]",
     "router": {
       "type": "pages"
@@ -47,7 +47,7 @@ export const PAGES_ROUTES = [
   },
   {
     "urlPath": "/orders",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/pages/orders",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages/orders",
     "relativePath": "./orders",
     "router": {
       "type": "pages"
@@ -58,7 +58,7 @@ export const PAGES_ROUTES = [
   },
   {
     "urlPath": "/orders/page",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/pages/orders/page.tsx",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages/orders/page.tsx",
     "relativePath": "./orders/page",
     "router": {
       "type": "pages"
@@ -69,7 +69,7 @@ export const PAGES_ROUTES = [
   },
   {
     "urlPath": "/orders/[userId]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/pages/orders/[userId]",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages/orders/[userId]",
     "relativePath": "./orders/[userId]",
     "router": {
       "type": "pages"
@@ -85,7 +85,7 @@ export const PAGES_ROUTES = [
   },
   {
     "urlPath": "/orders/[userId]/[orderId]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/pages/orders/[userId]/[orderId]",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages/orders/[userId]/[orderId]",
     "relativePath": "./orders/[userId]/[orderId]",
     "router": {
       "type": "pages"
@@ -107,7 +107,7 @@ export const PAGES_ROUTES = [
 export const APP_ROUTES = [
   {
     "urlPath": "/products",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/products/page.tsx",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/app/products/page.tsx",
     "relativePath": "./products/page",
     "router": {
       "type": "app",
@@ -123,7 +123,7 @@ export const APP_ROUTES = [
   },
   {
     "urlPath": "/products/[id]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/products/[id]/page.tsx",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/app/products/[id]/page.tsx",
     "relativePath": "./products/[id]/page",
     "router": {
       "type": "app",
@@ -144,7 +144,7 @@ export const APP_ROUTES = [
   },
   {
     "urlPath": "/products/[id]/[variant]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/products/[id]/[variant]/page.tsx",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/app/products/[id]/[variant]/page.tsx",
     "relativePath": "./products/[id]/[variant]/page",
     "router": {
       "type": "app",
@@ -169,7 +169,7 @@ export const APP_ROUTES = [
   },
   {
     "urlPath": "/user",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/user/page.tsx",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/app/user/page.tsx",
     "relativePath": "./user/page",
     "router": {
       "type": "app",
@@ -185,7 +185,7 @@ export const APP_ROUTES = [
   },
   {
     "urlPath": "/user/[userId]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/user/[userId]/page.tsx",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/app/user/[userId]/page.tsx",
     "relativePath": "./user/[userId]/page",
     "router": {
       "type": "app",
@@ -206,7 +206,7 @@ export const APP_ROUTES = [
   },
   {
     "urlPath": "/user/[userId]/[orderId]",
-    "absolutePath": "/home/zioth/projects/libs/nra/playground/src/app/user/[userId]/[orderId]/page.tsx",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/app/user/[userId]/[orderId]/page.tsx",
     "relativePath": "./user/[userId]/[orderId]/page",
     "router": {
       "type": "app",

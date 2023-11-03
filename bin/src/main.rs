@@ -9,7 +9,7 @@ mod next;
 mod utils;
 
 /// The name in `package.json` in `../lib`.
-const NODE_LIBRARY_NAME: &str = "@acme/lib";
+const NODE_LIBRARY_NAME: &str = "@next-typed-routes/lib";
 
 fn bin() -> Result<(), String> {
     let cli = CLI::parse();
@@ -21,6 +21,10 @@ fn bin() -> Result<(), String> {
         ));
     };
     println!("Project at \"{}\"\n", project_path.to_str().unwrap());
+
+    if project_path.join("package.json").canonicalize().is_err() {
+        return Err("The project directory does not contain a package.json file.".to_owned());
+    }
 
     let src = next::project::find_project_source(&project_path.to_owned()).unwrap();
 
