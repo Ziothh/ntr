@@ -3,22 +3,32 @@
   "version": "0.0.0",
   "private": false,
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ziothh/nra"
+  },
+  "bugs": {
+    "url": "https://github.com/Ziothh/nra/issues"
+  },
+  "homepage": "https://github.com/Ziothh/nra#readme",
   "main": "index.ts",
   "types": "index.ts",
   "type": "module",
   "files": [
-    "./index.ts"
+    "./npm"
   ],
+  "bin": "./npm/bin/index.js",
   "scripts": {
+    "postinstall": "node npm/bin/install.cjs",
+    "postuninstall": "node npm/bin/uninstall.cjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-  },
   "devDependencies": {
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
+    "binary-install": "^1.1.0",
     "next": "^13.4.13",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -26,7 +36,5 @@
   },
   "peerDependencies": {
     "next": "^13.4.13"
-  },
-  "optionalDependencies": {
   }
 }

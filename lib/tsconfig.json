@@ -24,11 +24,13 @@
   },
   "include": [
     "**/*.ts",
+    "bin/*.{ts, cts, mts}",
     "**/*.tsx",
     "../playground/generated/routes.ts"
   ],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "npm"
   ]
 }
