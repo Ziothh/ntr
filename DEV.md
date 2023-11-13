@@ -9,3 +9,7 @@
 ## Git
 `freeze = update-index --assume-unchanged`
 `thaw = update-index --no-assume-unchanged`
+
+## Github
+### Releasing binaries
+https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
