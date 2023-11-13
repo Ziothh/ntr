@@ -122,7 +122,7 @@ jobs:
         with:
           upload_url: ${{ needs.create-release.outputs.upload_url }} 
           asset_path: ./target/${{ matrix.target }}/release/${{ steps.make-artifact.outputs.name }}
-          asset_name: zellij-${{matrix.target}}.tar.gz
+          asset_name: ${{env.LIB_NAME}}-${{matrix.target}}.tar.gz
           asset_content_type: application/octet-stream
 
       - name: Upload checksum
@@ -132,7 +132,7 @@ jobs:
         with:
           upload_url: ${{ needs.create-release.outputs.upload_url }} 
           asset_path: ./target/${{ matrix.target }}/release/${{ steps.make-checksum.outputs.name }}
-          asset_name: zellij-${{matrix.target}}.sha256sum
+          asset_name: ${{env.LIB_NAME}}-${{matrix.target}}.sha256sum
           asset_content_type: text/plain
 
   create-release:
