@@ -112,7 +112,8 @@ jobs:
         working-directory: ./target/${{ matrix.target }}/release
         run: |
           name="$LIB_NAME-${{ matrix.target }}.tar.gz"
-          tar cvzf "${name}" "$BIN_CRATE_NAME"
+          mv "$BIN_CRATE_NAME" "$LIB_NAME"
+          tar cvzf "${name}" "$LIB_NAME"
           echo "::set-output name=name::${name}"
 
       - name: Upload release archive
