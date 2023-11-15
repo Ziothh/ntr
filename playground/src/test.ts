@@ -1,4 +1,4 @@
-import { appRouter, Routes } from '@acme/lib';
+import { appRouter } from '@next-typed-routes/lib';
 
 
 appRouter

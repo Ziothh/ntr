@@ -1,8 +1,9 @@
-# Working Title
+# Next Typed Routes
+These packages make routing intuitive and type-safe.
 
 ## TODOs
 ### CLI
- - [ ] Specify project location
+ - [x] Specify project location
  - [ ] Specify outFile
 
 ### Lib
