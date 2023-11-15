@@ -6,7 +6,7 @@ import path from 'path';
 import tar from 'tar';
 // const rimraf = require("rimraf");
 
-function error(msg: string, cause?: Error) {
+function error(msg: string, cause?: Error): never {
   console.error(msg, ...(cause ? [cause] : []));
   process.exit(1);
 };
@@ -66,6 +66,15 @@ export default class Binary {
 
     const tarFileLocation = path.resolve(this.installDirectory, this.url.toString().split('/').pop() ?? 'download.tar.gz');
     return await fetch(this.url)
+      .then(async (res) => {
+        if (res.ok) return res;
+
+        error([
+          `Could not fetch tarbal from "${this.url}"`,
+          'Status: ' + res.status,
+          'Error: ' + await res.text(),
+        ].join('\n'));
+      })
       .then(res => res.arrayBuffer())
       .then(blob => {
         // const file = new File([blob], tarFileLocation)

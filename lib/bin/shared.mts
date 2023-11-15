@@ -88,9 +88,10 @@ const getPlatformMetadata = () => {
 
 export const getBinary = () => {
   const platformMetadata = getPlatformMetadata();
+  const version = PACKAGE_JSON.version.split('-').shift()!;
   // the url for this binary is constructed from values in `package.json`
   // https://github.com/EverlastingBugstopper/binary-install/releases/download/v1.0.0/binary-install-example-v1.0.0-x86_64-apple-darwin.tar.gz
-  const url = `${PACKAGE_JSON.repository.url}/releases/download/v${PACKAGE_JSON.version}/${'ntr'}-${platformMetadata.RUST_TARGET}.tar.gz`;
+  const url = `${PACKAGE_JSON.repository.url}/releases/download/v${version}/${'ntr'}-${platformMetadata.RUST_TARGET}.tar.gz`;
   // const url = `https://github.com/Ziothh/ntr/releases/download/v0.0.0/ntr-x86_64-unknown-linux-musl.tar.gz`;
   const installDirectory = path.join(__dirname, "../../node_modules", ".bin");
 
