@@ -5,12 +5,12 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ziothh/nra"
+    "url": "https://github.com/Ziothh/ntr"
   },
   "bugs": {
-    "url": "https://github.com/Ziothh/nra/issues"
+    "url": "https://github.com/Ziothh/ntr/issues"
   },
-  "homepage": "https://github.com/Ziothh/nra#readme",
+  "homepage": "https://github.com/Ziothh/ntr#readme",
   "main": "index.ts",
   "types": "index.ts",
   "type": "module",
