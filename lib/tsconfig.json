@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "npm",
     "target": "ESNext",
     "lib": [
       "dom",
@@ -12,7 +12,8 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    "noEmit": false,
+    "declaration": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -23,10 +24,9 @@
     "noUncheckedIndexedAccess": true
   },
   "include": [
-    "**/*.ts",
-    "bin/*.{ts, cts, mts}",
-    "**/*.tsx",
-    "../playground/generated/routes.ts"
+    "./**/*.ts",
+    "./bin/*.mts",
+    "./**/*.tsx"
   ],
   "exclude": [
     "node_modules",
