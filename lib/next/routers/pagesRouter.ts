@@ -9,6 +9,28 @@ type RouteData<Path extends Routes.Paths.All> =
   }
   & (Route.Data<Path> extends never ? {} : Route.Data<Path>)
 
+
+type NextRoutingFn<R> = (url: string, as?: string, options?: Record<any, any>) => R;
+type RoutingFn<R, Options> = <
+  Path extends Routes.Paths.All,
+  As extends Routes.Paths.All
+>(
+  url: RouteData<Path>,
+  as?: RouteData<As>,
+  options?: Options,
+) => R
+
+
+const createRoutingFn = <
+  R,
+  Options extends Record<any, any> | undefined
+>(fn: NextRoutingFn<R>, _options: Options): RoutingFn<R, Options> => (url, as, options) => fn(
+  createUrl(url.path, url as any),
+  as === undefined ? undefined : createUrl(as.path, as as any),
+  options
+)
+
+
 export function useRouter<T extends Routes.Paths.PagesDir>(currentPath?: T) {
   const { push, replace, prefetch, query, ...router } = usePagesRouter()
 
@@ -21,55 +43,13 @@ export function useRouter<T extends Routes.Paths.PagesDir>(currentPath?: T) {
     /** Contains both the route path params and the url query parameters */
     query: query as
       & Routes.Params.get<
-        // @ts-ignore
+        // @__ts-ignore
         Routes.getByPath<Routes.PagesDir, T>
       >
       & Record<string, string | string[]>,
-    push<
-      Path extends Routes.Paths.All,
-      As extends Routes.Paths.All
-    >(
-      url: RouteData<Path> /* | Parameters<typeof push>[0] */,
-      as?: RouteData<As> /* | Parameters<typeof push>[1] */,
-      options?: TransitionOptions
-    ): Promise<boolean> {
-      return push(
-        createUrl(url.path, url as any),
-        as === undefined ? undefined : createUrl(as.path, as as any),
-        options
-      );
-    },
-
-    replace<
-      Path extends Routes.Paths.All,
-      As extends Routes.Paths.All
-    >(
-      url: RouteData<Path> /* | Parameters<typeof replace>[0] */,
-      as?: RouteData<As> /* | Parameters<typeof replace>[1] */,
-      options?: TransitionOptions
-    ): Promise<boolean> {
-      return replace(
-        // 'path' in url ? createUrl(url.path, url) : url,
-        createUrl(url.path, url as any),
-        as === undefined ? undefined : createUrl(as.path, as as any),
-        options
-      );
-    },
-
-    prefetch<
-      Path extends Routes.Paths.All,
-      As extends Routes.Paths.All
-    >(
-      url: RouteData<Path> /* | Parameters<typeof replace>[0] */,
-      as?: RouteData<As> /* | Parameters<typeof replace>[1] */,
-      options?: Parameters<typeof prefetch>[2]
-    ): Promise<void> {
-      return prefetch(
-        createUrl(url.path, url as any),
-        as === undefined ? undefined : createUrl(as.path, as as any),
-        options,
-      );
-    },
+    push: createRoutingFn(push, undefined as unknown as TransitionOptions),
+    // replace: createRoutingFn(replace, undefined as unknown as TransitionOptions),
+    // prefetch: createRoutingFn(prefetch, undefined as unknown as Parameters<typeof prefetch>[2]),
   } as const;
 }
 
