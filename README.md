@@ -16,11 +16,11 @@ WIP
 
 ### Lib
  - [x] Type safe routing to pages (`/pages/**/*.tsx` | `/app/**/page.tsx`)
-    - [ ] Support multiple occurances of the same path parameter
+    - [ ] Support multiple occurances of the same path parameter (if allowed by next)
     - [ ] Typed `/app` page Query parameters (by importing from `route.ts`)
  - [ ] Type safe fetching for route handlers (`/pages/**/*.ts` | `/app/**/route.ts`)
  - [ ] Dev UI
 
 ## Bugs
+ - [x] Catch-all routes don't work
  - [ ] Parent index is scoped to the router instead of all pages
- - [ ] Catch-all routes don't work
