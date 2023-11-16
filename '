@@ -84,14 +84,12 @@ export function createUrl<Path extends Routes.Paths.All>(
 ) {
   let url: string = path;
 
-  if ('params' in data && data.params !== undefined) for (
-    const [key, value] of Object.entries<string | string[] | undefined>(data.params)
-  ) {
+  if ('params' in data) for (const [key, value] of Object.entries<string | string[] | undefined>(data.params)) {
     // Single params
     if (typeof value === 'string') {
       url = url.replaceAll(`[${key}]`, value);
       continue;
-    }
+    } 
     // Catch all
     else if (Array.isArray(value)) {
       const requiredKey = `[...${key}]`;
