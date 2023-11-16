@@ -84,28 +84,38 @@ export function createUrl<Path extends Routes.Paths.All>(
 ) {
   let url: string = path;
 
-  if ('params' in data && data.params !== undefined) for (
-    const [key, value] of Object.entries<string | string[] | undefined>(data.params)
-  ) {
-    // Single params
-    if (typeof value === 'string') {
-      url = url.replaceAll(`[${key}]`, value);
-      continue;
-    }
-    // Catch all
-    else if (Array.isArray(value)) {
-      const requiredKey = `[...${key}]`;
+  if ('params' in data && data.params !== undefined) {
+    const parts = url.split('/') as Array<string | null>;
+    const params = data.params as Record<string, string | string[] | undefined>;
 
-      // Required
-      if (url.includes(requiredKey)) url = url.replace(requiredKey, value.join('/'));
-      // Optional
-      else {
-        const optionalKey = `[${requiredKey}]`;
-        if (url.includes(optionalKey)) url = url.replace(optionalKey, value.join('/'));
-      };
-    } else {
-      continue;
+    for (let index = 0; index < parts.length; index++) {
+      const segment = parts[index];
+      if (segment?.[0] !== '[') continue;
+
+      if (segment.startsWith('[[...') && segment.endsWith(']]')) {
+        const key = segment.slice(5, segment.length - 2);
+        const value = params[key];
+
+        if (typeof value === 'string') throw new Error('Strings are not allowed as catch-all params.');
+
+        parts[index] = (value?.length ?? 0) === 0
+          ? null
+          : value!.join('/')
+      } else if (segment.startsWith('[...') && segment.endsWith(']')) {
+        const key = segment.slice(4, segment.length - 1);
+        const value = params[key];
+
+        if ((value?.length ?? 0) === 0) throw new Error('Required catch-all routes need to have at least one item in the array.');
+
+        parts[index] = (value as string[]).join('/');
+      } else if (segment.startsWith('[') && segment.endsWith(']')) {
+        const key = segment.slice(1, segment.length - 1);
+
+        parts[index] = params[key] as string;
+      }
     }
+
+    url = parts.filter((x) => x !== null).join('/');
   }
 
   if (data.query !== undefined) Object
