@@ -15,12 +15,13 @@
     "noEmit": false,
     "declaration": true,
     "esModuleInterop": true,
+    "declarationMap": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
+    "incremental": false,
     "noUncheckedIndexedAccess": true
   },
   "include": [

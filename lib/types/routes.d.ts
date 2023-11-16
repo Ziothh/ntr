@@ -12,7 +12,7 @@ export namespace Routes {
   export type All = AppDir | PagesDir;
 
   export namespace Paths {
-    export type AppDir = Routes.AppDir['urlPath'];
+    export type AppDir = Routes.AppDir['urlPath'] & {};
     export type PagesDir = Routes.PagesDir['urlPath'];
     export type All = Routes.Paths.AppDir | Routes.Paths.PagesDir;
 
