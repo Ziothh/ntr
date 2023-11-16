@@ -26,12 +26,17 @@ export namespace Route {
     | getParams<Path.fromString<`${A}${B}`>>
     : never
 
-  export type Data<Path extends Path.Type> = {
-    query?: Record<string, string>
-    hash?: string
-  } & (Route.getParams<Path> extends never
-    ? {}
-    : { params: Record<Route.getParams<Path>, string> })
+  export type Data<
+    Path extends Path.Type,
+    _P = Routes.Params.get<Routes.getByPath<Routes.All, Extract<Path, Routes.Paths.All>>>
+  > =
+    & {
+      query?: Record<string, string>
+      hash?: string
+    }
+    & (_P extends never
+      ? {}
+      : { params: { [K in keyof _P]: _P[K] } })
 
   /** A namespace containing utilities to filter  */
   export namespace Filters {

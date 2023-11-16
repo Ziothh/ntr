@@ -25,6 +25,7 @@
     "noUncheckedIndexedAccess": true
   },
   "include": [
+    "./**/*.d.ts",
     "./**/*.ts",
     "./bin/*.mts",
     "./**/*.tsx"

@@ -3,7 +3,7 @@ import { useRouter as usePagesRouter } from 'next/router'
 import { type Route, createUrl } from '../utils'
 import type { Routes } from '../../types/routes'
 
-type RouteData<Path extends Routes.Paths.PagesDir> = Route.Data<Path> & {
+type RouteData<Path extends Routes.Paths.All> = Route.Data<Path> & {
   path: Path
 }
 
@@ -17,14 +17,14 @@ export function useRouter<T extends Routes.Paths.PagesDir>(currentPath?: T) {
       beforePopState: (cb: (state: NextHistoryState) => boolean) => void,
     }),
     query: query as
-      & Routes.getParams<
+      & Routes.Params.get<
         // @ts-ignore
         Routes.getByPath<Routes.PagesDir, T>
       >
       & Record<string, string>,
     push<
-      Path extends Routes.Paths.PagesDir,
-      As extends Routes.Paths.PagesDir
+      Path extends Routes.Paths.All,
+      As extends Routes.Paths.All
     >(
       url: RouteData<Path> /* | Parameters<typeof push>[0] */,
       as?: RouteData<As> /* | Parameters<typeof push>[1] */,
@@ -39,8 +39,8 @@ export function useRouter<T extends Routes.Paths.PagesDir>(currentPath?: T) {
     },
 
     replace<
-      Path extends Routes.Paths.PagesDir,
-      As extends Routes.Paths.PagesDir
+      Path extends Routes.Paths.All,
+      As extends Routes.Paths.All
     >(
       url: RouteData<Path> /* | Parameters<typeof replace>[0] */,
       as?: RouteData<As> /* | Parameters<typeof replace>[1] */,
@@ -55,8 +55,8 @@ export function useRouter<T extends Routes.Paths.PagesDir>(currentPath?: T) {
     },
     
     prefetch<
-      Path extends Routes.Paths.PagesDir,
-      As extends Routes.Paths.PagesDir
+      Path extends Routes.Paths.All,
+      As extends Routes.Paths.All
     >(
       url: RouteData<Path> /* | Parameters<typeof replace>[0] */,
       as?: RouteData<As> /* | Parameters<typeof replace>[1] */,

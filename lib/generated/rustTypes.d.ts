@@ -1,7 +1,7 @@
 /* THIS FILE HAS BEEN AUTOMATICALLY GENERATED AND CONTAINS TYPES THAT CORESPOND WITH THE RUST BINARY */
 
 
-export type RouteParam = { type: "single"; key: string } | { type: "catchAll"; key: string }
+export type RouteParam = { type: "single"; name: string } | { type: "catchAll"; name: string; optional: boolean }
 
 export type RoutePurpose = "API" | "page"
 

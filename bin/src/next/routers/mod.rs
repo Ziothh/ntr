@@ -33,10 +33,18 @@ pub enum NextRouterEntry {
 }
 
 #[derive(Serialize, Deserialize, Type, Debug)]
-#[serde(tag = "type", content = "key", rename_all = "camelCase")]
+#[serde(tag = "type", rename_all = "camelCase")]
 pub enum RouteParam {
-    Single(String),
-    CatchAll(String),
+    /// `/[param]` => `/foo`
+    Single { name: String },
+    /// Required: `/[...param]` => `/foo/bar/baz`
+    /// Optional: `/[[...param]]` => `/` | `/foo/bar/baz`
+    CatchAll {
+        /// Name of the parameter
+        name: String,
+        /// Wether the path needs to include the parameter or not
+        optional: bool,
+    },
 }
 
 impl RouteParam {
@@ -44,23 +52,32 @@ impl RouteParam {
     ///
     /// # Panics
     /// If the segment contains a "/"
-    ///
-    ///
     pub fn from_segment(segment: &str) -> Option<RouteParam> {
         if segment.find('/').is_some() {
             panic!(r#"Segment should not contain a "/""#);
         }
 
-        if segment.starts_with("[[") && segment.ends_with("]]") {
-            return Some(RouteParam::CatchAll(
-                segment[5..(segment.len() - 2)].to_owned(),
+        if segment.starts_with("[[...") && segment.ends_with("]]") {
+            return Some(RouteParam::CatchAll {
+                optional: true,
                 // Takes the value in [[...${value}]]
-            ));
+                name: segment[5..(segment.len() - 2)].to_owned(),
+            });
         }
         if segment.starts_with("[") && segment.ends_with("]") {
-            return Some(RouteParam::Single(
-                segment[1..(segment.len() - 1)].to_owned(),
-            ));
+            let param = &segment[1..(segment.len() - 1)];
+
+            return if param.starts_with("...") {
+                Some(RouteParam::CatchAll {
+                    // Takes the value in ...${value}
+                    name: param[3..].to_owned(),
+                    optional: false,
+                })
+            } else {
+                Some(RouteParam::Single {
+                    name: param.to_owned(),
+                })
+            };
         }
 
         return None;

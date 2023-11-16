@@ -1,7 +1,7 @@
 /* NOTE: THIS FILE HAS BEEN AUTOMATICALLY GENERATED. DO NOT EDIT. */
 
 
-export const PAGES_ROUTES = [
+export type PAGES_ROUTES = [
   {
     "urlPath": "/",
     "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages",
@@ -138,8 +138,9 @@ export const PAGES_ROUTES = [
     "purpose": "page",
     "parentIndex": 7
   }
-] as const;
-export const APP_ROUTES = [
+];
+
+export type APP_ROUTES = [
   {
     "urlPath": "/app-router/required/[...required]",
     "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/app/app-router/required/[...required]/page.tsx",
@@ -308,4 +309,4 @@ export const APP_ROUTES = [
     "purpose": "page",
     "parentIndex": 6
   }
-] as const;
+];

@@ -4,9 +4,9 @@ import { Route, createUrl } from "../utils";
 
 type NavigateOptions = NonNullable<Parameters<ReturnType<typeof appRouter['useRouter']>['push']>[1]>
 type NextRoutingFn = (href: string, options?: NavigateOptions) => void;
-type RoutingFn<Fn extends NextRoutingFn> = <Path extends Routes.Paths.AppDir>(
-    path: Path,
-    ...args: Path extends `${string}/[${string}]${string}`
+type RoutingFn<Fn extends NextRoutingFn> = <Path extends Routes.Paths.All>(
+  path: Path,
+  ...args: Path extends `${string}/[${string}]${string}`
     ? [options: Route.Data<Path> & NavigateOptions]
     : [options?: Route.Data<Path> & NavigateOptions]
 ) => ReturnType<Fn>
@@ -29,14 +29,31 @@ export function useRouter() {
   } as const;
 }
 
-/** @link https://nextjs.org/docs/app/api-reference/functions/use-params */
+/** A wrapper around the next.js `useParams` app router hook.
+  *
+  * @param currentPath - A type hint to get the right route parameters type.
+  *
+  * ```typescript
+  * // # Examples
+    *
+  * // Not passing any parameter hints
+  * const params = useParams() // All possible path parameters
+  * if ('id' in params) { params.id }
+  *
+  * // Passing the path as a parameter gives better auto completion
+  * const params = useParams('/user/[id]') // { id: string }
+  *
+  * // Passing the path as a generic still works but gives no auto completion
+  * const params = useParams<'/user/[id]'>() // { id: string }
+  * ```
+  * @link https://nextjs.org/docs/app/api-reference/functions/use-params 
+  * */
 export function useParams<T extends Routes.Paths.AppDir>(currentPath?: T) {
   return appRouter.useParams() as Routes.Paths.getParams<T>;
-  // return appRouter.useParams() as T;
 }
 
 /** @todo */
-export function useSearchParams() {
+export function useSearchParams(): never {
   // return appRouter.usePathname
-  return 'TODO' as 'TODO';
+  throw 'TODO';
 }

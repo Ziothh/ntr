@@ -12,6 +12,7 @@ WIP
         - [ ] Specify `outFile`
         - [ ] Make optional by default
     - [ ] `generated/{appRoutes, pages}.json` if asked for?
+ - [ ] Tests
 
 ### Lib
  - [x] Type safe routing to pages (`/pages/**/*.tsx` | `/app/**/page.tsx`)
@@ -19,3 +20,7 @@ WIP
     - [ ] Typed `/app` page Query parameters (by importing from `route.ts`)
  - [ ] Type safe fetching for route handlers (`/pages/**/*.ts` | `/app/**/route.ts`)
  - [ ] Dev UI
+
+## Bugs
+ - [ ] Parent index is scoped to the router instead of all pages
+ - [ ] Catch-all routes don't work
