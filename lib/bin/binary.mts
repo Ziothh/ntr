@@ -30,8 +30,13 @@ export default class Binary {
 
     this.url = url;
     this.name = name;
-    this.installDirectory =
-      config?.installDirectory || path.join(__dirname, "node_modules", ".bin");
+    this.installDirectory = path.join(
+      ...(config?.installDirectory 
+        ? [config.installDirectory] 
+        : [__dirname, "node_modules", ".bin"]
+      ),
+      'download' // to prevent name collisions
+    );
 
     if (!fs.existsSync(this.installDirectory)) {
       fs.mkdirSync(this.installDirectory, { recursive: true });
