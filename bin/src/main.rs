@@ -20,7 +20,7 @@ fn bin() -> Result<(), String> {
             cli.project_path
         ));
     };
-    println!("Project at \"{}\"\n", project_path.to_str().unwrap());
+    println!("Parsing project at \"{}\"\n", project_path.to_str().unwrap());
 
     if project_path.join("package.json").canonicalize().is_err() {
         return Err("The project directory does not contain a package.json file.".to_owned());
@@ -80,7 +80,7 @@ fn write_node_modules_types(
     )
     .unwrap();
 
-    println!("> Wrote types.");
+    println!("> Wrote types to {NODE_LIBRARY_NAME}");
 
     return anyhow::Ok(());
 }
@@ -92,9 +92,10 @@ fn write_ts(out_dir: &Path, pages_dir_str: &str, app_dir_str: &str) -> anyhow::R
     contents += &format!("\nexport const PAGES_ROUTES = {} as const;", pages_dir_str);
     contents += &format!("\nexport const APP_ROUTES = {} as const;", app_dir_str,);
 
-    std::fs::write(out_dir.join("routes.ts"), contents).unwrap();
+    let out_file = out_dir.join("routes.ts");
+    std::fs::write(&out_file, contents).unwrap();
 
-    println!("> Wrote ts generated output to {out_dir:?}");
+    println!("> Wrote ts generated output to {out_file:?}");
 
     return anyhow::Ok(());
 }
