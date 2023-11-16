@@ -68,7 +68,7 @@ fn write_node_modules_types(
 ) -> anyhow::Result<()> {
     std::fs::write(
         project_path.join(format!(
-            "node_modules/{}/generated/routes.d.ts",
+            "node_modules/{}/npm/generated/routes.d.ts",
             NODE_LIBRARY_NAME
         )),
         [
