@@ -3,6 +3,9 @@ These packages make routing intuitive and type-safe.
 
 WIP
 
+## Library
+For documentation on the library go to the [README in `/lib`](./lib/README.md).
+
 ## TODOs
 ### CLI
  - [x] Specify project location
@@ -10,7 +13,6 @@ WIP
     - [x] override `/node_modules/@next-typed-routes/lib` routing types
     - [x] `generated/routes.ts` file containing `app` & `pages` info
         - [ ] Specify `outFile`
-        - [ ] Make optional by default
     - [ ] `generated/{appRoutes, pages}.json` if asked for?
  - [ ] Tests
 
@@ -25,3 +27,5 @@ WIP
  - [x] Catch-all routes don't work
  - [ ] Parent index is scoped to the router instead of all pages
  - [ ] Give router buiders instead of router instances because of React context issues
+    - [ ] hook builders
+    - [ ] Stop generating types in node modules since it's not needed anymore

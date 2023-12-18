@@ -1,5 +1,5 @@
 import type { Routes } from "../../types/routes";
-import appRouter from 'next/navigation'
+import appRouter from 'next/navigation';
 import { Route, createUrl } from "../utils";
 
 type NavigateOptions = NonNullable<Parameters<ReturnType<typeof appRouter['useRouter']>['push']>[1]>

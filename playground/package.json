@@ -1,48 +1,48 @@
 {
-  "name": "@next-typed-routes/playground",
+  "name": "playground",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "gen:routes": "../target/debug/bin",
     "start": "next start"
   },
   "dependencies": {
-    "@next-typed-routes/lib": "workspace:*",
-    "@next-auth/prisma-adapter": "^1.0.7",
-    "@t3-oss/env-nextjs": "^0.6.0",
-    "@tanstack/react-query": "^4.32.6",
-    "@trpc/client": "^10.37.1",
-    "@trpc/next": "^10.37.1",
-    "@trpc/react-query": "^10.37.1",
-    "@trpc/server": "^10.37.1",
-    "next": "^13.4.19",
-    "next-auth": "^4.23.0",
+    "@next-typed-routes/lib": "0.0.3-rc.12",
+    "@t3-oss/env-nextjs": "^0.7.1",
+    "@tanstack/react-query": "^4.36.1",
+    "@trpc/client": "^10.43.6",
+    "@trpc/next": "^10.43.6",
+    "@trpc/react-query": "^10.43.6",
+    "@trpc/server": "^10.43.6",
+    "next": "^14.0.3",
+    "next-auth": "^4.24.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "superjson": "^1.13.1",
-    "zod": "^3.21.4"
+    "server-only": "^0.0.1",
+    "superjson": "^2.2.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/eslint": "^8.44.2",
-    "@types/node": "^18.16.0",
-    "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.3.0",
-    "@typescript-eslint/parser": "^6.3.0",
+    "@next/eslint-plugin-next": "^14.0.3",
+    "@types/eslint": "^8.44.7",
+    "@types/node": "^18.17.0",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
     "autoprefixer": "^10.4.14",
-    "eslint": "^8.47.0",
-    "eslint-config-next": "^13.4.19",
-    "postcss": "^8.4.27",
-    "prettier": "^3.0.0",
-    "prettier-plugin-tailwindcss": "^0.5.1",
-    "tailwindcss": "^3.3.3",
+    "eslint": "^8.54.0",
+    "postcss": "^8.4.31",
+    "prettier": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "tailwindcss": "^3.3.5",
     "typescript": "^5.1.6"
   },
   "ct3aMetadata": {
-    "initVersion": "7.20.2"
+    "initVersion": "7.24.2"
   },
-  "packageManager": "pnpm@8.7.1"
+  "packageManager": "pnpm@8.7.6"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@next-typed-routes/lib",
-  "version": "0.0.3-rc.8",
+  "version": "0.0.3-rc.13",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -32,19 +32,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "next": ">=13",
     "tar": "^6.2.0"
   },
   "devDependencies": {
     "@types/node": "~20",
-    "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
     "@types/tar": "^6.1.9",
-    "next": "^13.4.13",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
-    "next": "^13.4.13"
+    "@types/react": ">=18",
+    "@types/react-dom": ">=18",
+    "next": ">=13"
   }
 }

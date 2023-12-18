@@ -3,9 +3,9 @@
 
 export const PAGES_ROUTES = [
   {
-    "urlPath": "/",
-    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages",
-    "relativePath": "./",
+    "urlPath": "/api/pagesApi",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages/api/pagesApi.ts",
+    "relativePath": "./api/pagesApi",
     "router": {
       "type": "pages"
     },
@@ -14,42 +14,9 @@ export const PAGES_ROUTES = [
     "parentIndex": null
   },
   {
-    "urlPath": "/api/trpc/[trpc]",
-    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages/api/trpc/[trpc].ts",
-    "relativePath": "./api/trpc/[trpc]",
-    "router": {
-      "type": "pages"
-    },
-    "params": [
-      {
-        "type": "single",
-        "name": "trpc"
-      }
-    ],
-    "purpose": "page",
-    "parentIndex": 0
-  },
-  {
-    "urlPath": "/api/auth/[...nextauth]",
-    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages/api/auth/[...nextauth].ts",
-    "relativePath": "./api/auth/[...nextauth]",
-    "router": {
-      "type": "pages"
-    },
-    "params": [
-      {
-        "type": "catchAll",
-        "name": "nextauth",
-        "optional": false
-      }
-    ],
-    "purpose": "page",
-    "parentIndex": 0
-  },
-  {
-    "urlPath": "/pages-router/required/[...required]/page",
-    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages/pages-router/required/[...required]/page.tsx",
-    "relativePath": "./pages-router/required/[...required]/page",
+    "urlPath": "/pages-router/required/[...required]",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages/pages-router/required/[...required]",
+    "relativePath": "./pages-router/required/[..",
     "router": {
       "type": "pages"
     },
@@ -61,12 +28,12 @@ export const PAGES_ROUTES = [
       }
     ],
     "purpose": "page",
-    "parentIndex": 0
+    "parentIndex": null
   },
   {
-    "urlPath": "/pages-router/optional/[[...optional]]/page",
-    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages/pages-router/optional/[[...optional]]/page.tsx",
-    "relativePath": "./pages-router/optional/[[...optional]]/page",
+    "urlPath": "/pages-router/optional/[[...optional]]",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/pages/pages-router/optional/[[...optional]]",
+    "relativePath": "./pages-router/optional/[[..",
     "router": {
       "type": "pages"
     },
@@ -78,7 +45,7 @@ export const PAGES_ROUTES = [
       }
     ],
     "purpose": "page",
-    "parentIndex": 0
+    "parentIndex": null
   },
   {
     "urlPath": "/orders",
@@ -89,7 +56,7 @@ export const PAGES_ROUTES = [
     },
     "params": null,
     "purpose": "page",
-    "parentIndex": 0
+    "parentIndex": null
   },
   {
     "urlPath": "/orders/page",
@@ -100,7 +67,7 @@ export const PAGES_ROUTES = [
     },
     "params": null,
     "purpose": "page",
-    "parentIndex": 5
+    "parentIndex": 3
   },
   {
     "urlPath": "/orders/[userId]",
@@ -116,7 +83,7 @@ export const PAGES_ROUTES = [
       }
     ],
     "purpose": "page",
-    "parentIndex": 5
+    "parentIndex": 3
   },
   {
     "urlPath": "/orders/[userId]/[orderId]",
@@ -136,10 +103,47 @@ export const PAGES_ROUTES = [
       }
     ],
     "purpose": "page",
-    "parentIndex": 7
+    "parentIndex": 5
   }
 ] as const;
 export const APP_ROUTES = [
+  {
+    "urlPath": "/",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/app/page.tsx",
+    "relativePath": "./page",
+    "router": {
+      "type": "app",
+      "loading": false,
+      "error": false,
+      "layout": true,
+      "template": false,
+      "notFound": false
+    },
+    "params": null,
+    "purpose": "page",
+    "parentIndex": null
+  },
+  {
+    "urlPath": "/api/trpc/[trpc]",
+    "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/app/api/trpc/[trpc]/route.ts",
+    "relativePath": "./api/trpc/[trpc]/route",
+    "router": {
+      "type": "app",
+      "loading": false,
+      "error": false,
+      "layout": false,
+      "template": false,
+      "notFound": false
+    },
+    "params": [
+      {
+        "type": "single",
+        "name": "trpc"
+      }
+    ],
+    "purpose": "API",
+    "parentIndex": 0
+  },
   {
     "urlPath": "/app-router/required/[...required]",
     "absolutePath": "/home/zioth/projects/libs/ntr/playground/src/app/app-router/required/[...required]/page.tsx",
@@ -160,7 +164,7 @@ export const APP_ROUTES = [
       }
     ],
     "purpose": "page",
-    "parentIndex": null
+    "parentIndex": 0
   },
   {
     "urlPath": "/app-router/optional/[[...optional]]",
@@ -182,7 +186,7 @@ export const APP_ROUTES = [
       }
     ],
     "purpose": "page",
-    "parentIndex": null
+    "parentIndex": 0
   },
   {
     "urlPath": "/products",
@@ -198,7 +202,7 @@ export const APP_ROUTES = [
     },
     "params": null,
     "purpose": "page",
-    "parentIndex": null
+    "parentIndex": 0
   },
   {
     "urlPath": "/products/[id]",
@@ -219,7 +223,7 @@ export const APP_ROUTES = [
       }
     ],
     "purpose": "page",
-    "parentIndex": 2
+    "parentIndex": 4
   },
   {
     "urlPath": "/products/[id]/[variant]",
@@ -244,7 +248,7 @@ export const APP_ROUTES = [
       }
     ],
     "purpose": "page",
-    "parentIndex": 3
+    "parentIndex": 5
   },
   {
     "urlPath": "/user",
@@ -260,7 +264,7 @@ export const APP_ROUTES = [
     },
     "params": null,
     "purpose": "page",
-    "parentIndex": null
+    "parentIndex": 0
   },
   {
     "urlPath": "/user/[userId]",
@@ -281,7 +285,7 @@ export const APP_ROUTES = [
       }
     ],
     "purpose": "page",
-    "parentIndex": 5
+    "parentIndex": 7
   },
   {
     "urlPath": "/user/[userId]/[orderId]",
@@ -306,6 +310,6 @@ export const APP_ROUTES = [
       }
     ],
     "purpose": "page",
-    "parentIndex": 6
+    "parentIndex": 8
   }
 ] as const;

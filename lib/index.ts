@@ -5,8 +5,8 @@ export * from './types';
 import { unzip } from 'zlib';
 import { routers } from './next'
 
-const appRouter = routers.appRouter.useRouter();
-const pagesRouter = routers.pagesRouter.useRouter();
+// const appRouter = routers.appRouter.useRouter();
+// const pagesRouter = routers.pagesRouter.useRouter();
 
 // appRouter.push('/user/[userId]/[orderId]', {
 //   params: {

@@ -1,19 +1,34 @@
 import NextLink, { type LinkProps } from 'next/link'
-import type { Route, Path } from './utils'
+import { type Route, type Path, createUrl } from './utils'
 import type { Routes } from '../types/routes';
 
-type Props<R extends Routes.All, RouteInferTypes> = Omit<
+type Props<R extends Routes.Paths.All, RouteInferTypes> = Omit<
   LinkProps<RouteInferTypes>,
   'href'
 > &
   (
     | Pick<LinkProps<RouteInferTypes>, 'href'>
     | {
-        href: { route: R } & Route.Data<Extract<R, Path.Type>>
-      }
+      route: { path: R } & (
+        Route.Data<Extract<R, Path.Type>> extends never
+        ? {}
+        : Route.Data<Extract<R, Path.Type>>
+      )
+    }
   )
-const Link = <Route extends Routes.All, RouteInferTypes>(
+const Link = <Route extends Routes.Paths.All, RouteInferTypes>(
   props: Props<Route, RouteInferTypes>
-): JSX.Element => <NextLink {...props} />
+): JSX.Element => {
+  if ('route' in props) {
+
+    return <NextLink {...props} href={createUrl(
+      props.route.path,
+      // @ts-ignore // TODO: check if this works
+      props.route,
+    )} />;
+  }
+
+  return <NextLink {...props} />;
+}
 
 export default Link

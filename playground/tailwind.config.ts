@@ -1,13 +1,14 @@
 import { type Config } from "tailwindcss";
-// @ts-expect-error
-import libConfig from '@acme/lib/tailwind.config';
-
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
-  content: ["./src/**/*.{js,ts,jsx,tsx}", "../lib/**/*.tsx"],
+  content: ["./src/**/*.tsx"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+      },
+    },
   },
   plugins: [],
-  presets: [libConfig],
 } satisfies Config;
