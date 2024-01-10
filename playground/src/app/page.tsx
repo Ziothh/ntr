@@ -1,12 +1,17 @@
 "use client"
 import Link from "next/link";
 
-import { useAppRouter } from '@next-typed-routes/lib';
+import { appRouter, useAppRouter } from '@next-typed-routes/lib';
 import { useEffect } from "react";
 
-console.log(module);
 export default function Home() {
   const router = useAppRouter();
+  const data = {
+    params: appRouter.useParams('/'),
+    // searchParams: appRouter.useSearchParams()
+  }
+
+  console.log(data.params)
 
   useEffect(() => {
     router.push('/orders')

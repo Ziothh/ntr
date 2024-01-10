@@ -28,7 +28,7 @@
     "postinstall": "node npm/bin/install.mjs",
     "postuninstall": "node npm/bin/uninstall.mjs"
   },
-  "keywords": [],
+  "keywords": ["next.js", "typed routes", "router", "typescript", "react"],
   "author": "",
   "license": "ISC",
   "dependencies": {

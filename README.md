@@ -1,9 +1,9 @@
 # Next Typed Routes
-These packages make routing intuitive and type-safe.
+These packages make routing in next.js intuitive and type-safe.
 
-WIP
+WIP: The package is fully functional but the API is subject to change. 
 
-## Library
+## `@next-typed-routes/lib`
 For documentation on the library go to the [README in `/lib`](./lib/README.md).
 
 ## TODOs
@@ -12,7 +12,7 @@ For documentation on the library go to the [README in `/lib`](./lib/README.md).
  - [ ] OutFiles
     - [x] override `/node_modules/@next-typed-routes/lib` routing types
     - [x] `generated/routes.ts` file containing `app` & `pages` info
-        - [ ] Specify `outFile`
+        - [ ] Specify custom `outFile` dir
     - [ ] `generated/{appRoutes, pages}.json` if asked for?
  - [ ] Tests
 
@@ -20,12 +20,12 @@ For documentation on the library go to the [README in `/lib`](./lib/README.md).
  - [x] Type safe routing to pages (`/pages/**/*.tsx` | `/app/**/page.tsx`)
     <!-- - [ ] Support multiple occurances of the same path parameter (if allowed by next) -->
     - [ ] Typed `/app` page Query parameters (by importing from `route.ts`)
- - [ ] Type safe fetching for route handlers (`/pages/**/*.ts` | `/app/**/route.ts`)
+ - [ ] Type safe API calls to (`/pages/**/*.ts` | `/app/**/route.ts`)
  - [ ] Dev UI
 
 ## Bugs
  - [x] Catch-all routes don't work
- - [ ] Parent index is scoped to the router instead of all pages
- - [ ] Give router buiders instead of router instances because of React context issues
-    - [ ] hook builders
-    - [ ] Stop generating types in node modules since it's not needed anymore
+ <!-- - [ ] Give router buiders instead of router instances because of React context issues -->
+ <!--    - [ ] hook builders -->
+ <!--    - [ ] Stop generating types in node modules since it's not needed anymore -->
+ <!-- - [ ] Parent index is scoped to the router instead of all pages -->

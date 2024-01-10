@@ -28,8 +28,8 @@ export default config;
 ```
 
 ### Generating routing types
-Altough the library works in a generic way without generating types, 
-its purpose is defeated by skipping this step.
+Altough the library works in a route agnostic way without generating types, 
+its purpose is kinda defeated by skipping this step.
 
 ```bash
 # Run the binary to generate the route types
@@ -46,15 +46,16 @@ Parsing project at "/path/to/project"
 ```typescript
 // ~/app/page.tsx
 
-import { useAppRouter, routers } from '@next-typed-routes/lib';
+import { useAppRouter, routers, appRouter } from '@next-typed-routes/lib';
 
 export default () => {
   const router = useAppRouter();
+  // Or use one of the alternative ways. The API is still being worked on.
+  // const router = routes.appRouter.useRouter()
+  // const router = appRouter.useRouter()
 
   // Specify the current path template in `useParams` and get a typed object back
-  const params = routers.appRouter.useParams('/user/[userId]/[orderId]');
-  // Type of params: { userId: string, orderId: string }
-  const { userId, orderId } = params;
+  const { userId, orderId } = appRouter.useParams('/user/[userId]/[orderId]');
 
   router.push('/user'); // Works
 
