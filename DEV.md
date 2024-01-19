@@ -11,6 +11,7 @@
 `thaw = update-index --no-assume-unchanged`
 
 ## TODOs
+ - [ ] Link component: strict untill `looseHref` is passed to the props (adds (string & {}))
  - [ ] More examples
  - [ ] Move TODOs to github project
 

@@ -12,7 +12,7 @@ WIP: The package is fully functional but the API is subject to change.
  - [ ] Type safe query parameters.
  - [ ] Type safe API calls to next.js route APIs.
 
-## `@next-typed-routes/lib`
+## [npm:`@next-typed-routes/lib`](https://www.npmjs.com/package/@next-typed-routes/lib)
 This is the main package of this monorepo and contains the TypeScript code for the npm package.
 
 For documentation on the library go to the [README in `/lib`](./lib/README.md).
