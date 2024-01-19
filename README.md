@@ -1,31 +1,25 @@
 # Next Typed Routes
 These packages make routing in next.js intuitive and type-safe.
 
+This projects functions as a replacement for the `typedRoutes` experimental `next.js` feature untill the interface becomes easier to use.
+[The discussion to improve the `next.js` feature can be found here](https://github.com/vercel/next.js/discussions/55499).
+
 WIP: The package is fully functional but the API is subject to change. 
 
+## Features
+ - [x] Analyze `next.js` routes and generate types with the `ntr` command.
+ - [x] Use the routing types in the lib to make routing type safe.
+ - [ ] Type safe query parameters.
+ - [ ] Type safe API calls to next.js route APIs.
+
 ## `@next-typed-routes/lib`
+This is the main package of this monorepo and contains the TypeScript code for the npm package.
+
 For documentation on the library go to the [README in `/lib`](./lib/README.md).
 
-## TODOs
-### CLI
- - [x] Specify project location
- - [ ] OutFiles
-    - [x] override `/node_modules/@next-typed-routes/lib` routing types
-    - [x] `generated/routes.ts` file containing `app` & `pages` info
-        - [ ] Specify custom `outFile` dir
-    - [ ] `generated/{appRoutes, pages}.json` if asked for?
- - [ ] Tests
+## The `ntr` command
+This command generates type information about the routes in the `next.js` project.
 
-### Lib
- - [x] Type safe routing to pages (`/pages/**/*.tsx` | `/app/**/page.tsx`)
-    <!-- - [ ] Support multiple occurances of the same path parameter (if allowed by next) -->
-    - [ ] Typed `/app` page Query parameters (by importing from `route.ts`)
- - [ ] Type safe API calls to (`/pages/**/*.ts` | `/app/**/route.ts`)
- - [ ] Dev UI
+A version matching with the library is released on every `v*.*.*` tag via [github actions](./.github/workflows/bin-release.yaml).
 
-## Bugs
- - [x] Catch-all routes don't work
- <!-- - [ ] Give router buiders instead of router instances because of React context issues -->
- <!--    - [ ] hook builders -->
- <!--    - [ ] Stop generating types in node modules since it's not needed anymore -->
- <!-- - [ ] Parent index is scoped to the router instead of all pages -->
+For documentation on its usage with the library go to the [README in `/lib`](./lib/README.md).
